@@ -24,3 +24,7 @@ class Band(models.Model):
 
     def __str__(self):
         return f'{self.name}' # Define display name on admin site
+
+class Listing(models.Model):
+    name = models.fields.CharField(max_length=100, default="hello", primary_key=True)
+    band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)

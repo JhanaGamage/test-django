@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from listings import views
+from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', views.hello),
+    path('api-auth/', include('rest_framework.urls'))
+
   #  path('about-us/', views.about),  # ajoutez cette ligne
 ]
